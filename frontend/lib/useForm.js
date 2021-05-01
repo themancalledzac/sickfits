@@ -12,7 +12,7 @@ export default function useForm(initial = {}) {
     }
     // if it's a file, it requires an array of files
     if (type === 'file') {
-      value[0] = e.target.files;
+      [value] = e.target.files;
     }
     setInputs({
       // copy the existing state
