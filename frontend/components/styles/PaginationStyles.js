@@ -8,7 +8,7 @@ const PaginationStyles = styled.div`
   justify-content: center;
   align-content: center;
   margin: 2rem 0;
-  border: 1px solid var(--lightGray);
+  border: 1px solid var(--lightGray, black);
   border-radius: 10px;
   & > * {
     margin: 0;
