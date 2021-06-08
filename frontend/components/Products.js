@@ -35,7 +35,7 @@ export default function Products({ page }) {
     },
   });
 
-  console.log(data, error, loading);
+  // console.log(data, error, loading);
   if (loading) return <p>Loading...</p>;
 
   return (

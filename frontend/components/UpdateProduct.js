@@ -40,7 +40,6 @@ export default function UpdateProduct({ id }) {
     variables: { id },
   });
 
-  console.log(data);
   // 2. we need to get the mutation to update the product
   const [
     updateProduct,
@@ -48,7 +47,6 @@ export default function UpdateProduct({ id }) {
   ] = useMutation(UPDATE_PRODUCT_MUTATION);
   // create some stae for the form inputs
   const { inputs, handleChange, clearForm, resetForm } = useForm(data?.Product);
-  console.log(inputs);
   if (loading) return <p>loading...</p>;
   // 3. we need the form to handle the updates
   // similar to the 'create' form
@@ -64,7 +62,6 @@ export default function UpdateProduct({ id }) {
             price: inputs.price,
           },
         }).catch(console.error);
-        console.log(res);
         // submit the inputfields to the backend:
         // TODO: Handle Submit!!!
         //     const res = await createProduct();

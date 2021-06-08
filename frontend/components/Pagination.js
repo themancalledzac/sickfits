@@ -18,13 +18,14 @@ export default function Pagination({ page }) {
   const { error, loading, data } = useQuery(PAGINATION_QUERY);
   if (loading) return 'Loading...';
   if (error) return <DisplayError error={error} />;
-  //   console.log(data);
   const { count } = data._allProductsMeta;
   const pageCount = Math.ceil(count / perPage);
   return (
     <PaginationStyles>
       <Head>
-        <title>Sick Fits = Page {page} of ___</title>
+        <title>
+          Sick Fits = Page {page} of {pageCount}
+        </title>
       </Head>
       <Link href={`/products/${page - 1}`}>
         <a aria-disabled={page <= 1}>← Prev</a>
